@@ -1,0 +1,68 @@
+version: "3.9"
+
+volumes:
+  shared_lambda:
+  shared_lambda_zip:
+
+services:
+  app:
+    build:
+      context: ./cpp-lambda
+      args:
+        CC: ${CC}
+        CXX: ${CXX}
+        CPP_VERSION: ${CPP_VERSION}
+        DCMAKE_BUILD_TYPE: ${DCMAKE_BUILD_TYPE}
+        LAMBDA_TASK_ROOT: ${LAMBDA_TASK_ROOT}
+        LAMBDA_PACKAGE_NAME: ${LAMBDA_PACKAGE_NAME}
+    image: cpp-lambda
+    container_name: cpp-lambda
+    command: tail -f /dev/null  # Keep the container running (if needed)
+    volumes:
+      - shared_lambda:${LAMBDA_TASK_ROOT}/lambda
+      - shared_lambda_zip:/shared_lambda_zip
+    ports:
+      - "80:80"
+    platform: linux/arm64
+
+  emulator:
+    build:
+      context: ./lambda-emulator
+      args:
+        LAMBDA_TASK_ROOT: ${LAMBDA_TASK_ROOT}
+        LAMBDA_PACKAGE_NAME: ${LAMBDA_PACKAGE_NAME}
+        AWS_REGION: ${AWS_REGION}
+        AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+        AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+        AWS_SESSION_TOKEN: ${AWS_SESSION_TOKEN}
+        AWS_LAMBDA_FUNCTION_MEMORY_SIZE: ${AWS_LAMBDA_FUNCTION_MEMORY_SIZE}
+    image: lambda-emulator
+    container_name: lambda-emulator
+    volumes:
+      - shared_lambda:${LAMBDA_TASK_ROOT}
+    ports:
+      - "9000:8080"
+    platform: linux/arm64
+
+  unit-tests:
+    build:
+      context: ./unit-tests
+    image: unit-tests
+    container_name: unit-tests
+    depends_on:
+      - emulator
+    command: /bin/bash -c "cd /var/task/src/test/build && ./test_lambda && tail -f /dev/null"
+    environment:
+      LAMBDA_URL: http://emulator:8080/2015-03-31/functions/function/invocations
+
+  cdk-deploy:
+    build:
+      context: lambda-deployment
+    image: lambda-deployment
+    container_name: lambda-deployment
+    depends_on:
+      - unit-tests
+    volumes:
+      - shared_lambda_zip:/shared_lambda_zip
+    command: /entrypoint.sh
+

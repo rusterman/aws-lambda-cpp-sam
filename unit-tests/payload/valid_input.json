@@ -1,0 +1,10 @@
+{
+  "body": "{\"time\": \"morning\"}",
+  "queryStringParameters": {
+    "name": "John",
+    "city": "New York"
+  },
+  "headers": {
+    "day": "Monday"
+  }
+}

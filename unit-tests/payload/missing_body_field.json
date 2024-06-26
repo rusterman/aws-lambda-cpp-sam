@@ -1,0 +1,9 @@
+{
+  "queryStringParameters": {
+    "name": "Alice",
+    "city": "Los Angeles"
+  },
+  "headers": {
+    "day": "Friday"
+  }
+}
