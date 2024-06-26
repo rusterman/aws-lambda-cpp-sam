@@ -1,6 +1,6 @@
 ## AWS Lambda C++ Framework Build, Test, Deploy
 ![GitHub release (latest by date)](https://img.shields.io/badge/release-v1.0.0-blue)
-![GitHub](https://img.shields.io/github/license/yourusername/your-repository-name)
+![GitHub](https://img.shields.io/github/license/rusterman/aws-lambda-cpp-framework)
 
 | OS | Arch |
 |----|------|
@@ -264,7 +264,7 @@ Each service is defined to build from a specific context,
 use necessary environment variables, and share volumes for communication between containers.
 
 ## Contributing
-We welcome contributions! Please see the CONTRIBUTING.md file for guidelines on how to get involved.
+We welcome contributions! Please see the [CONTRIBUTING.md](https://github.com/rusterman/aws-lambda-cpp-framework/blob/main/CONTRIBUTING.md) file for guidelines on how to get involved.
 
 ## Acknowledgement
 
@@ -280,4 +280,5 @@ For the next release, I am planning to:
 3. Construct GitHub Actions to automate the workflow.
    
 ## License
-This project is licensed under the terms of the MIT License. See the LICENSE file for details.
+This project is licensed under the terms of the MIT License. 
+See the [LICENSE](https://github.com/rusterman/aws-lambda-cpp-framework/blob/main/LICENSE) file for details.
