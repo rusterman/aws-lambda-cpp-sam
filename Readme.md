@@ -108,7 +108,7 @@ The root folder's `.env` file contains crucial setups for our project:
 12. **AWS_LAMBDA_FUNCTION_MEMORY_SIZE**: Defines the memory size (in megabytes) allocated to the AWS Lambda function:
     - **Important Note**: Local memory usage set by this variable might not accurately reflect the actual behavior in the AWS Lambda environment, especially in terms of performance characteristics and resource availability.
 
-## 1. Let's Explore the `cpp-lambda` Folder in More Detail
+## 1. Explore the `cpp-lambda` Folder in More Detail
 ```
 .
 ├── cpp-lambda/
@@ -182,7 +182,7 @@ exec /usr/local/bin/aws-lambda-rie "$LAMBDA_TASK_ROOT"/bootstrap handler.functio
 ```
 
 
-## 3. Lambda Invocation Test `unit-tests` Folder in More Detail
+## 3. Lambda Invocation Test `unit-tests`
 ```
 .
 ├── unit-tests/
@@ -201,7 +201,7 @@ exec /usr/local/bin/aws-lambda-rie "$LAMBDA_TASK_ROOT"/bootstrap handler.functio
 
 It is worth mentioning that you can write these unit tests using other programming languages like Python, Java, JavaScript, etc.
 
-## 4. AWS Deployment `lambda-deployment` Folder in More Detail
+## 4. AWS Deployment `lambda-deployment` Folder
 ```
 .
 ├── lambda-deployment/
