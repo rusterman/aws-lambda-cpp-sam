@@ -9,7 +9,28 @@
 ## Overview
 
 This project is a complete framework designed to streamline and support the entire lifecycle of AWS Lambda development in C++. 
-It is organized into several subfolders to facilitate the development, emulation, testing, and deployment of AWS Lambda functions written in C++. 
+It is organized into several subfolders to facilitate the development, emulation, testing, and deployment of AWS Lambda functions written in C++.
+
+## Key Features
+
+- **Bug-Free**: Designed to be free of bugs and easy to understand.
+- **Isolated and Flexible**: Each component runs in an isolated environment, making the system flexible and manageable.
+- **Best AWS C++ Examples**: Equipped with top AWS C++ examples, including those using the AWS C++ SDK.
+- **Local Invocation and Testing**: Supports invoking and testing Lambda functions on a local machine.
+- **Automated Workflow**: Automates the building, emulating, testing, experimenting, versioning, and deployment processes.
+
+## Motivation
+
+In building my custom AWS C++ runtime, I encountered challenges such as:
+- Debugging and running reliable examples.
+- Understanding the AWS SDK for C++.
+- Testing Lambda functions locally before deploying them to the cloud.
+- Simulating payloads.
+
+This setup aims to address these challenges by providing a comprehensive, automated solution akin to **AWS SAM** but for AWS C++ Lambdas.
+
+Let's dive in!
+
 Below is an overview of the subfolders and their purposes:
 
 ```
@@ -65,26 +86,6 @@ Below is an overview of the subfolders and their purposes:
 Each of these subfolders contains the necessary code and Docker files to perform their respective tasks. Each folder runs a container to achieve isolation, and their built artifacts are shared using Docker volumes.
 
 The root folder contains a single entry point, `docker-compose.yml`. Simply running this file initiates the entire process automatically. Additionally, it includes an `.env` file with all the required environment variables for building, running, testing, and deploying (including AWS and AWS Lambda configurations).
-
-## Key Features
-
-- **Bug-Free**: Designed to be free of bugs and easy to understand.
-- **Isolated and Flexible**: Each component runs in an isolated environment, making the system flexible and manageable.
-- **Best AWS C++ Examples**: Equipped with top AWS C++ examples, including those using the AWS C++ SDK.
-- **Local Invocation and Testing**: Supports invoking and testing Lambda functions on a local machine.
-- **Automated Workflow**: Automates the building, emulating, testing, experimenting, versioning, and deployment processes.
-
-## Motivation
-
-In building my custom AWS C++ runtime, I encountered challenges such as:
-- Debugging and running reliable examples.
-- Understanding the AWS SDK for C++.
-- Testing Lambda functions locally before deploying them to the cloud.
-- Simulating payloads.
-
-This setup aims to address these challenges by providing a comprehensive, automated solution akin to **AWS SAM** but for AWS C++ Lambdas.
-
-Let's dive in!
 
 ## Environment Variables in `.env` File
 
