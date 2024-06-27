@@ -91,21 +91,21 @@ The root folder contains a single entry point, `docker-compose.yml`. Simply runn
 
 The root folder's `.env` file contains crucial setups for our project:
 
-1. **CC=gcc**: Specifies `gcc` (GNU Compiler Collection) as the C compiler.
-2. **CXX=g++**: Specifies `g++` (GNU Compiler Collection for C++) as the C++ compiler.
-3. **CPP_VERSION**: Specifies the C++ standard version (e.g., 11, 14, 17).
+1. `CC=gcc`: Specifies `gcc` (GNU Compiler Collection) as the C compiler.
+2. `CXX=g++`: Specifies `g++` (GNU Compiler Collection for C++) as the C++ compiler.
+3. `CPP_VERSION`: Specifies the C++ standard version (e.g., 11, 14, 17).
     - You can compile and build your Lambda function in C++ 11, 14, or 17 just by specifying `CPP_VERSION`.
-4. **LAMBDA_TASK_ROOT=/var/task**: Specifies the root directory where the AWS Lambda function's code and dependencies are located.
-5. **LAMBDA_PACKAGE_NAME**: Defines the name of the package or directory that contains the Lambda function's code.
-6. **CMAKE_BUILD_TYPE**: Defines the build type (configuration) for a project:
+4. `LAMBDA_TASK_ROOT=/var/task`: Specifies the root directory where the AWS Lambda function's code and dependencies are located.
+5. `LAMBDA_PACKAGE_NAME`: Defines the name of the package or directory that contains the Lambda function's code.
+6. `CMAKE_BUILD_TYPE`: Defines the build type (configuration) for a project:
     - **Debug**: Includes debug information and no optimization.
     - **Release**: Optimizes the build for performance, usually enabling compiler optimizations and disabling debug information.
-7. **TABLE_NAME=your-dynamo-table-name**: Defines the name of the DynamoDB table that your application will interact with.
-8. **AWS_REGION**: Defines the specific AWS region to use for API requests and resource operations.
-9. **AWS_ACCESS_KEY_ID**: Holds the access key ID, which is a part of your AWS credentials.
-10. **AWS_SECRET_ACCESS_KEY**: Used to securely sign and authenticate API requests to AWS services.
-11. **AWS_SESSION_TOKEN**: Stores a temporary security token provided by AWS STS (Security Token Service), it is not mandatory.
-12. **AWS_LAMBDA_FUNCTION_MEMORY_SIZE**: Defines the memory size (in megabytes) allocated to the AWS Lambda function:
+7. `TABLE_NAME=your-dynamo-table-name**: Defines the name of the DynamoDB table that your application will interact with.
+8. `AWS_REGION`: Defines the specific AWS region to use for API requests and resource operations.
+9. `AWS_ACCESS_KEY_ID`: Holds the access key ID, which is a part of your AWS credentials.
+10. `AWS_SECRET_ACCESS_KEY`: Used to securely sign and authenticate API requests to AWS services.
+11. `AWS_SESSION_TOKEN`: Stores a temporary security token provided by AWS STS (Security Token Service), it is not mandatory.
+12. `AWS_LAMBDA_FUNCTION_MEMORY_SIZE`: Defines the memory size (in megabytes) allocated to the AWS Lambda function:
     - **Important Note**: Local memory usage set by this variable might not accurately reflect the actual behavior in the AWS Lambda environment, especially in terms of performance characteristics and resource availability.
 
 ## 1. Explore the `cpp-lambda` Folder in More Detail
