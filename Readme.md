@@ -100,7 +100,7 @@ The root folder's `.env` file contains crucial setups for our project:
 6. `CMAKE_BUILD_TYPE`: Defines the build type (configuration) for a project:
     - `Debug`: Includes debug information and no optimization.
     - `Release`: Optimizes the build for performance, usually enabling compiler optimizations and disabling debug information.
-7. `TABLE_NAME=your-dynamo-table-name**: Defines the name of the DynamoDB table that your application will interact with.
+7. `TABLE_NAME=your-dynamo-table-name`: Defines the name of the DynamoDB table that your application will interact with.
 8. `AWS_REGION`: Defines the specific AWS region to use for API requests and resource operations.
 9. `AWS_ACCESS_KEY_ID`: Holds the access key ID, which is a part of your AWS credentials.
 10. `AWS_SECRET_ACCESS_KEY`: Used to securely sign and authenticate API requests to AWS services.
