@@ -1,4 +1,4 @@
-## AWS Lambda C++ Framework Build, Test, Deploy
+## AWS Lambda C++ Serverless Application Model (SAM)
 ![GitHub release (latest by date)](https://img.shields.io/badge/release-v1.0.0-blue)
 ![GitHub](https://img.shields.io/github/license/rusterman/aws-lambda-cpp-framework)
 
